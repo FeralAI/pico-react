@@ -1,0 +1,16 @@
+{
+	"workbench.colorCustomizations": {
+		"activityBar.background": "#0E350A",
+		"titleBar.activeBackground": "#144A0E",
+		"titleBar.activeForeground": "#F3FCF2"
+	},
+	"files.associations": {
+		"*.config": "xml",
+		"*.linq": "csharp",
+		"dhserver.h": "c",
+		"httpd.h": "c",
+		"fs.h": "c",
+		"def.h": "c",
+		"fsdata.h": "c"
+	}
+}
