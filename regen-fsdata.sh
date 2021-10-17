@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo Regenerating lib/httpd/fsdata.c
-./makefsdata www/build/ -f:lib/httpd/fsdata.c
+./tools/makefsdata www/build/ -f:lib/httpd/fsdata.c
 echo Done
 
 echo Replace includes
