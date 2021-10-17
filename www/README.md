@@ -1,6 +1,4 @@
-# GP2040 Web Configurator
-
-Simple web application for gamepad configuration.
+# RP2040 React App
 
 ## Dev Notes
 
