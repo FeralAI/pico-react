@@ -11,11 +11,9 @@ A sample application for RP2040 MCUs for hosting a React site.
 
 ## Development
 
-There are two configured environments for PlatformIO: `build` and `build-cached`. The `build` environment will execute the `build-web-py` script on each build, which can be a long running process. If the content of your React app hasn't changed, switch over to the `build-cached` environment to only build the C++ source code and use the current `fsdata.c` file.
+There are two configured environments for PlatformIO: `build` and `build-cached`. The `build` environment will execute the `build-web-py` script on each build, which can be a long running process. If the content of your React app hasn't changed, switch over to the `build-cached` environment to only build the C++ source code and use the current `fsdata.c` file. You can also manually run the `build-web.py` script to update build the React app and regenerate the `lib/httpd/fsdata.c` file. Also of note, `makefsdata` doesn't set the correct `#include` lines for our use. This script will fix this issue.
 
 The lwIP lib in Wizio Pico PlatformIO platform doesn't include the `makefsdata` source. A precompiled version for Windows and Unix are included in the `tools` folder.
-
-Use the `build-web.py` script to update build the React app and regenerate the `lib/httpd/fsdata.c` file. `makefsdata` doesn't set the correct `#include` lines for our use. This script will fix this issue.
 
 Use JPG and PNG files for images, SVG file support requires modification that I haven't done.
 
