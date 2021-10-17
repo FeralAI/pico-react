@@ -13,25 +13,26 @@ char *html[2]={"/index.html","/Index.html"};
 
 static const char *cgi_toggle_led(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
-    gpio_put(LED_PIN, !gpio_get(LED_PIN));
-    return html[gpio_get(LED_PIN)];
+	gpio_put(LED_PIN, !gpio_get(LED_PIN));
+	return html[gpio_get(LED_PIN)];
 }
 
 static const char *cgi_reset_usb_boot(int iIndex, int iNumParams, char *pcParam[], char *pcValue[])
 {
-    reset_usb_boot(0, 0);
-    return html[gpio_get(LED_PIN)];
+	reset_usb_boot(0, 0);
+	return html[gpio_get(LED_PIN)];
 }
 
-static const tCGI cgi_handlers[] = {
-  {
-    "/toggle_led",
-    cgi_toggle_led
-  },
-  {
-    "/reset_usb_boot",
-    cgi_reset_usb_boot
-  }
+static const tCGI cgi_handlers[] =
+{
+	{
+		"/toggle_led",
+		cgi_toggle_led
+	},
+	{
+		"/reset_usb_boot",
+		cgi_reset_usb_boot
+	}
 };
 
 void webserver(void)

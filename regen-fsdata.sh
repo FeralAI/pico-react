@@ -1,5 +1,12 @@
 #!/bin/sh
 
+echo Building React app
+cd www
+npm i
+npm run build
+cd ..
+echo Done
+
 echo Regenerating lib/httpd/fsdata.c
 ./tools/makefsdata www/build/ -f:lib/httpd/fsdata.c
 echo Done
