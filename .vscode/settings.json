@@ -11,6 +11,10 @@
 		"httpd.h": "c",
 		"fs.h": "c",
 		"def.h": "c",
-		"fsdata.h": "c"
-	}
+		"fsdata.h": "c",
+		"stdlib.h": "c",
+		"tusb.h": "c",
+		"usbd.h": "c"
+	},
+	"python.pythonPath": "C:\\Users\\jskuby\\.platformio\\penv\\Scripts\\python.exe"
 }
