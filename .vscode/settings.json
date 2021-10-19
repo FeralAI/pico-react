@@ -14,7 +14,8 @@
 		"fsdata.h": "c",
 		"stdlib.h": "c",
 		"tusb.h": "c",
-		"usbd.h": "c"
+		"usbd.h": "c",
+		"usb_descriptors.h": "c"
 	},
 	"python.pythonPath": "C:\\Users\\jskuby\\.platformio\\penv\\Scripts\\python.exe"
 }

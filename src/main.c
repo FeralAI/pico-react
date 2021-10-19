@@ -8,7 +8,7 @@
 #include "webserver.h"
 #include "usb_descriptors.h"
 
-UsbMode mode = HID;
+UsbMode mode = NET;
 
 int main(void)
 {
