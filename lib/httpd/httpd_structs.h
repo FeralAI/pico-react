@@ -56,7 +56,10 @@ static const char * const g_psHTTPHeaderStrings[] =
  "Connection: Close\r\n",
  "Connection: keep-alive\r\n",
  "Server: "HTTPD_SERVER_AGENT"\r\n",
- "\r\n<html><body><h2>404: The requested file cannot be found.</h2></body></html>\r\n"
+ "\r\n<html><body><h2>404: The requested file cannot be found.</h2></body></html>\r\n",
+ "Content-type: application/pdf\r\n\r\n",
+ "Content-type: application/json\r\n\r\n",
+ "Content-type: image/svg+xml\r\n\r\n"
 };
 
 /* Indexes into the g_psHTTPHeaderStrings array */
@@ -87,6 +90,9 @@ static const char * const g_psHTTPHeaderStrings[] =
 #define HTTP_HDR_CONN_KEEPALIVE 24 /* Connection: keep-alive (HTTP 1.1) */
 #define HTTP_HDR_SERVER         25 /* Server: HTTPD_SERVER_AGENT */
 #define DEFAULT_404_HTML        26 /* default 404 body */
+#define HTTP_HDR_PDF            27 /* Server: HTTPD_SERVER_AGENT */
+#define HTTP_HDR_JSON           28 /* Server: HTTPD_SERVER_AGENT */
+#define HTTP_HDR_SVG            29 /* Server: HTTPD_SERVER_AGENT */
 
 /** A list of extension-to-HTTP header strings */
 const static tHTTPHeader g_psHTTPHeaders[] =

@@ -1,4 +1,4 @@
-/* 
+/*
  * The MIT License (MIT)
  *
  * Copyright (c) 2020 Peter Lawrence
@@ -39,7 +39,7 @@ and likely their manufacturer has not tested such functionality.  Some code work
 The smartphone may only have an ECM driver, but refuse to automatically pick ECM (unlike the OSes above);
 try modifying ./examples/devices/net_lwip_webserver/usb_descriptors.c so that CONFIG_ID_ECM is default.
 
-The smartphone may be artificially picky about which Ethernet MAC address to recognize; if this happens, 
+The smartphone may be artificially picky about which Ethernet MAC address to recognize; if this happens,
 try changing the first byte of tud_network_mac_address[] below from 0x02 to 0x00 (clearing bit 1).
 */
 
@@ -154,7 +154,7 @@ bool dns_query_proc(const char *name, ip_addr_t *addr)
 
 bool tud_network_recv_cb(const uint8_t *src, uint16_t size)
 {
-  /* this shouldn't happen, but if we get another packet before 
+  /* this shouldn't happen, but if we get another packet before
   parsing the previous, we must signal our inability to accept it */
   if (received_frame)
     return false;
@@ -223,12 +223,15 @@ void tud_network_init_cb(void)
 
 int rndis_init(void)
 {
+  /* initialize TinyUSB */
+  tusb_init();
+
   /* initialize lwip, dhcp-server, dns-server, and http */
   init_lwip();
   while (!netif_is_up(&netif_data))
     ;
   while (dhserv_init(&dhcp_config) != ERR_OK)
-    ; 
+    ;
   while (dnserv_init(&ipaddr, 53, dns_query_proc) != ERR_OK)
     ;
   httpd_init();
